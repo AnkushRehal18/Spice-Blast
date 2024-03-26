@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: #343a40;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubble{
+    position: relative;
+    display: flex;
+}
+.bubble span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color:#4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubble span:nth-child(even){
+    background-color:#ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }    
+}
+
+.bill_area{
+    display: flex;
+    justify-content: center;
+    height: 900px;
+}
+.style_dish_button{
+    border: 20px ;
+    background-color: rgb(255, 33, 79);;
+    border-color: rgb(255, 33, 79);;
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    font-size: 1rem;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    padding: 16px;
+    text-align: center;
+}
+.style_dish_button_new{
+    border: 20px ;
+    background: transparent;
+    background-color: rgb(255, 33, 79);;
+    border-color: rgb(255, 33, 79);;
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    font-size: 1rem;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    padding: 16px;
+    text-align: center;
+}
+.both{
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+}

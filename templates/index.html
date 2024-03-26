@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Spice Blast</title>
+  
+    <!-- font icons -->
+    <link rel="stylesheet" href="{{url_for('static',filename='themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+    
+
+    <!-- Bootstrap + FoodHut main styles -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/foodhut.css')}}">
+    <script>
+        // Function to hide flash messages after 2 seconds
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                var flashMessages = document.querySelectorAll('.flash-message');
+                flashMessages.forEach(function (message) {
+                    message.style.display = 'none';
+                });
+            }, 2000);
+        });
+    </script>
+    <style></style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <h1>Flash Messages Example</h1>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li class="flash-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="fixed-top" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallary">Gallary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#book-table">Book-Table</a>
+                </li>
+            </ul>
+            <a class="navbar-brand m-auto" href="#">
+                <img src="/static/imgs/logo.svg" class="brand-img" alt="">
+                <span class="brand-txt">Spice Blast</span>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testmonial">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a href="components.html" class="btn btn-primary ml-xl-4">Components</a>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+    <!-- header -->
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+            <h1 class="display-2 font-weight-bold my-3">Spice Blast</h1>
+            <h2 class="display-4 mb-5">Always fresh &amp; Delightful</h2>
+            <a class="btn btn-lg btn-primary" href="#gallary">View Our gallary</a>
+        </div>
+    </header>
+
+    <!--  About Section  -->
+    <div id="about" class="container-fluid wow fadeIn" id="about"data-wow-duration="1.5s">
+        <div class="row">
+            <div class="col-lg-6 has-img-bg"></div>
+            <div class="col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 py-5 my-5">
+                        <h2 class="mb-4">About Us</h2>
+                        <p>Welcome to Spice Blast, where culinary artistry meets global allure. Immerse yourself in a symphony of flavors that transcend borders and elevate your dining experience. Our vibrant fusion of traditional Indian spices and international delicacies is a journey for your senses, promising an explosion of taste and a retreat for the soul. 
+                        </p>
+                        <p><b></b></p>
+                        <p>At Spice Blast, we don't just serve meals; we craft memorable adventures that take you on a spice-infused odyssey. Indulge in the extraordinary, savor the unexpected, and let your taste buds dance in the rhythm of a global culinary celebration. This is more than a hotel<br> it's a Spice Blast experience, where every bite tells a story.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  gallary Section  -->
+    <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
+        <h2 class="section-title">OUR MENU</h2>
+    </div>
+    <div class="gallary row">
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-1.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay"  >
+                <p style="font-family: cursive; "> Kadhai Paneer</p>    
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-2.jpg" style="height: 417px;" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-3.jpg" style="height: 417px;" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-4.jpg"  style="height: 417px;" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-5.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-6.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-7.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-8.jpeg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-9.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-10.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-11.jpg" alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="/static/imgs/gallary-12.jpeg"  alt="food item" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                
+            </a>
+        </div>
+    </div>
+
+    <!-- book a table Section  -->
+    <form method="post" action="/submit">
+    <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
+        <div class="">
+            <h2 class="section-title mb-5">BOOK A TABLE</h2>
+            <div class="row mb-5">
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="email" id="booktable"  name = "email"class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="number" id="booktable" name = "number" class="form-control form-control-lg custom-form-control" placeholder="NUMBER OF GUESTS" max="20" min="0">
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="time" id="booktable" name="time" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="date" id="booktable" name="date" class="form-control form-control-lg custom-form-control" placeholder="12/12/12">
+                </div>
+            </div >
+           
+            <input type="submit"  class="btn btn-lg btn-primary" id="rounded-btn" name="submit" value="submit" >
+            <button type="button" class="btn btn-lg btn-primary" id="rounded-btn" onclick="location.href='{{ url_for('online_order') }}'">Online Order</button>
+
+        </div>
+    </div>
+</form>
+
+    <!-- BLOG Section  -->
+    <div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
+        <h2 class="section-title py-5">EVENTS AT THE SPICE BLAST</h2>
+        <div class="row justify-content-center">
+            <div class="col-sm-7 col-md-4 mb-5">
+                <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#foods" role="tab" aria-controls="pills-home" aria-selected="true">Foods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#juices" role="tab" aria-controls="pills-profile" aria-selected="false">Juices</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="foods" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border my-3 my-md-0">
+                            <img src="/static/imgs/chicken-chow-mein-recipe.jpg" alt="food item" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">₹50</a></h1>
+                                <h4 class="pt20 pb20">Veg. Chowmin</h4>
+                                <p class="text-white">delectable vegetarian stir-fried noodle dish that offers a delightful blend of fresh vegetables and savory sauces, creating a satisfying and flavorful dining experience </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border my-3 my-md-0">
+                            <img src="/static/imgs/veg-momos-recipe-13.jpg" style="height: 418px;" alt="food item" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">₹70</a></h1>
+                                <h4 class="pt20 pb20">Momos</h4>
+                                <p class="text-white">dumplings filled with a delicious mix of minced meat or vegetables. Whether steamed or fried, they are served with flavorful sauces, offering a delightful experience for appetizer enthusiasts </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border my-3 my-md-0">
+                            <img src="/static/imgs/burger.jpg" alt="food item" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">₹60</a></h1>
+                                <h4 class="pt20 pb20">Burger</h4>
+                                <p class="text-white">andwiches featuring a succulent patty, often grilled or fried, nestled in a soft bun with various toppings and condiments. A classic and beloved choice, burgers offer a satisfying dining experience </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="juices" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row">
+                    <div class="col-md-4 my-3 my-md-0">
+                        <div class="card bg-transparent border">
+                            <img src="/static/imgs/sharbat.jpg" alt="food item" style="height: 420px;" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">₹100</a></h1>
+                                <h4 class="pt20 pb20">Gulab Sharbat</h4>
+                                <p class="text-white"> refined beverage meticulously crafted with premium rose syrup, crisp chilled water, and a touch of floral elegance </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3 my-md-0">
+                        <div class="card bg-transparent border">
+                            <img src="/static/imgs/thadai.jpg" alt="food item" style="height: 420px;" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">₹80</a></h1>
+                                <h4 class="pt20 pb20">Thandai</h4>
+                                <p class="text-white">a harmonious blend of aromatic nuts, and cool milk. Delight in the rich heritage of this refined beverage, expertly crafted to elevate your palate with every sip</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3 my-md-0">
+                        <div class="card bg-transparent border">
+                            <img src="/static/imgs/cocktail.jpg" alt="food item" style="height: 420px;" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">₹120</a></h1>
+                                <h4 class="pt20 pb20">cocktail</h4>
+                                <p class="text-white"> expertly crafted with premium spirits and artisanal flair, elevating your dining experience to new heights. Cheers to sophistication in every sip! </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REVIEWS Section  -->
+    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+        <h2 class="section-title my-5 text-center">REVIEWS</h2>
+        <div class="row mt-3 mb-5">
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Reviewer 1</h3>
+                    <h6 class="testmonial-subtitle">Person</h6>
+                    <div class="testmonial-body">
+                        <p>Great Resturant awesome food!!!!!11</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Reviewer 2</h3>
+                    <h6 class="testmonial-subtitle">Person</h6>
+                    <div class="testmonial-body">
+                        <p>Blast of spices in every food!!!!!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Reviewer 3</h3>
+                    <h6 class="testmonial-subtitle">Person</h6>
+                    <div class="testmonial-body">
+                        <p>Awesome Drinks!!!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT Section  -->
+    <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
+        <div class="row">
+            <div class="col-md-6 px-0">
+                <div id="map" style="width: 100%; height: 100%; min-height: 400px"></div>
+            </div>
+            <div class="col-md-6 px-5 has-height-lg middle-items">
+                <h3>FIND US</h3>
+                <p>
+                    Contact or Visit us using the information given below.
+                </p>
+                <div class="text-muted">
+                    <p><span class="ti-location-pin pr-3"></span> V P O Rainsary UNA (HP)</p>
+                    <p><span class="ti-support pr-3"></span> 1234567890</p>
+                    <p><span class="ti-email pr-3"></span>rehalankush192@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- page footer  -->
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>EMAIL US</h3>
+                <P class="text-muted">rehalankush192@gmail.com</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>CALL US</h3>
+                <P class="text-muted">1234567890</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>FIND US</h3>
+                <P class="text-muted">V P O Rainsary UNA (HP)</P>
+            </div>
+        </div>
+    </div>
+    
+    <!-- end of page footer -->
+
+	<!-- core  -->
+    
+    <script src="/static/jquery/jquery-3.4.1.js"></script>
+    
+    <script src="/static/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+   
+    <script src="/static/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- wow.js -->
+    
+    <script src="/static/wow/wow.js"></script>
+    
+    <!-- google maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+    
+    <!-- FoodHut js -->
+    
+    <script src="/static/js/foodhut.js"></script>
+
+</body>
+</html>

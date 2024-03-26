@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/cssforonline_order.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bubble">
+            <span style="--i:11"></span>
+            <span style="--i:13"></span>
+            <span style="--i:23"></span>
+            <span style="--i:26"></span>
+            <span style="--i:28"></span>
+            <span style="--i:29"></span>
+            <span style="--i:18"></span>
+            <span style="--i:15"></span>
+            <span style="--i:13"></span>
+            <span style="--i:18"></span>
+            <span style="--i:22"></span>
+            <span style="--i:23"></span>
+            <span style="--i:12"></span>
+            <span style="--i:16"></span>
+            <span style="--i:19"></span>
+            <span style="--i:20"></span>
+            <span style="--i:25"></span>
+            <span style="--i:24"></span>
+            <span style="--i:29"></span>
+            <span style="--i:26"></span>
+            <span style="--i:30"></span>
+            <span style="--i:11"></span>
+            <span style="--i:13"></span>
+            <span style="--i:23"></span>
+            <span style="--i:26"></span>
+            <span style="--i:28"></span>
+            <span style="--i:29"></span>
+            <span style="--i:18"></span>
+            <span style="--i:15"></span>
+            <span style="--i:13"></span>
+            <span style="--i:18"></span>
+            <span style="--i:22"></span>
+            <span style="--i:23"></span>
+            <span style="--i:12"></span>
+            <span style="--i:16"></span>
+            <span style="--i:19"></span>
+            <span style="--i:20"></span>
+            <span style="--i:25"></span>
+            <span style="--i:24"></span>
+            <span style="--i:29"></span>
+            <span style="--i:26"></span>
+            <span style="--i:30"></span>
+        </div>
+        <div class="bill_area">
+            <form>
+                <label for="kadhai Paneer" class="style_dish_button">Kadhai Paneer  Rs-190</label>
+                <input type="button" value="-" onclick="decrementQuantity('kadhaiPaneer')" />
+                <input type="text" style="width: 19px;" id="kadhaiPaneer" name="kadhaiPaneerQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('kadhaiPaneer')" />
+                <br><br>
+                <!--butter Chicken-->
+                <label for="Butter Chicken" class="style_dish_button">Butter Chicken  Rs-150</label>
+                <input type="button" value="-" onclick="decrementQuantity('Butter Chicken')" />
+                <input type="text" style="width: 19px;" id="ButterChicken" name="ButterChickenQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('ButterChicken')" />
+                <br><br>
+                <!--idli sambhar-->
+                <label for="IdliSambahr" class="style_dish_button">Idli Sambahr  Rs-100</label>
+                <input type="button" value="-" onclick="decrementQuantity('IdliSambahr')" />
+                <input type="text" style="width: 19px;" id="IdliSambahr" name="IdliSambahrQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('IdliSambahr')" />
+                <br><br>
+                <!--cheese chillie-->
+                <label for="Cheese Chlli" class="style_dish_button">Cheese Chlli  Rs-60</label>
+                <input type="button" value="-" onclick="decrementQuantity('CheeseChlli')" />
+                <input type="text" style="width: 19px;" id="CheeseChlli" name="CheeseChlliQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('CheeseChlli')" />
+                <br><br>
+                <!--Dosa-->
+                <label for="Dosa" class="style_dish_button">Dosa  Rs-80</label>
+                <input type="button" value="-" onclick="decrementQuantity('Dosa')" />
+                <input type="text" style="width: 19px;" id="Dosa" name="DosaQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('Dosa')" />
+                <br><br>
+                <!--Mango Shake-->
+                <label for="Mango Shake" class="style_dish_button">Mango Shake  Rs-30</label>
+                <input type="button" value="-" onclick="decrementQuantity('MangoShake')" />
+                <input type="text" style="width: 19px;" id="MangoShake" name="MangoShakeQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('MangoShake')" />
+                <br><br>
+                <!--Banana Shake-->
+                <label for="Banana Shake" class="style_dish_button">Banana Shake  Rs-35</label>
+                <input type="button" value="-" onclick="decrementQuantity('BananaShake')" />
+                <input type="text" style="width: 19px;" id="BananaShake" name="BananaShakeQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('BananaShake')" />
+                <br><br>
+                <!--Oreo Shake-->
+                <label for="Oreo Shake" class="style_dish_button">Oreo Shake  Rs-70</label>
+                <input type="button" value="-" onclick="decrementQuantity('OreoShake')" />
+                <input type="text" style="width: 19px;" id="OreoShake" name="OreoShakeQuantity" value="0" />
+                <input type="button" value="+" onclick="incrementQuantity('OreoShake')" />
+                <br><br>
+                <!--Total Bill-->
+                <div class="both">
+                <input type="button" value="Confirm Order" name="Confirm Order" class="style_dish_button" onclick="return getValues()"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="style_dish_button_new" id = "displayArea">Total Bill:</p>
+            </div>
+            </form>
+            <!-- Add similar buttons for other items if needed -->
+        </div>
+    </div>
+
+    <script>
+        function incrementQuantity(item) {
+            var quantityElement = document.getElementById(item);
+            quantityElement.value = parseInt(quantityElement.value) + 1;
+        }
+
+        function decrementQuantity(item) {
+            var quantityElement = document.getElementById(item);
+            var currentQuantity = parseInt(quantityElement.value);
+            if (currentQuantity > 0) {
+                quantityElement.value = currentQuantity - 1;
+            }
+        }
+
+        function getValues(){
+            var Quantityofkadhaipaneer = document.getElementById("kadhaiPaneer").value;
+            var QuantityofButterChicken = document.getElementById("ButterChicken").value;
+            var QuantityofIdliSambhar = document.getElementById("IdliSambahr").value;
+            var QuantityofCheeseChilli = document.getElementById("CheeseChlli").value;
+            var QuantityofDosa = document.getElementById("Dosa").value;
+            var QuantityofMangoShake = document.getElementById("MangoShake").value;
+            var QuantityofBananaShake = document.getElementById("BananaShake").value;
+            var QuantityofOreoShake = document.getElementById("OreoShake").value;
+
+            // Getting the total values of each food items 
+
+            var Total_of_KadhaiPanner = 190 * Quantityofkadhaipaneer;
+            var Total_of_ButterChicken  = 150 * QuantityofButterChicken; 
+            var Total_of_IdliSambhar = 100 * QuantityofIdliSambhar;
+            var Total_of_CheeseChilli = 60 * QuantityofCheeseChilli;
+            var Total_of_Dosa = 80 * QuantityofDosa;
+            var Total_of_MangoShake = 30 * QuantityofMangoShake;
+            var Total_of_BananaShake = 35 * QuantityofBananaShake;
+            var Total_of_OreoShake = 70 * QuantityofOreoShake;
+
+            var Grand = Total_of_KadhaiPanner + Total_of_ButterChicken + Total_of_IdliSambhar + Total_of_CheeseChilli + Total_of_Dosa + Total_of_MangoShake + Total_of_BananaShake + Total_of_OreoShake;
+
+            var displayArea = document.getElementById("displayArea");
+            displayArea.innerText = Grand +"Rs";
+
+            return false;
+        }
+        
+    </script>
+</body>
+</html>
